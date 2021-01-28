@@ -1,0 +1,204 @@
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+@media (min-width: 320px) and (max-width: 1199px) {
+  body {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.logo-back {
+  display: none;
+}
+@media (min-width: 320px) and (max-width: 1199px) {
+  .logo-back {
+    height: 80px;
+    width: 90vw;
+    display: flex;
+    flex-direction: initial;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+@media (min-width: 320px) and (max-width: 1199px) {
+  .logo-back .logo {
+    display: initial;
+    width: 30vw;
+  }
+}
+
+.text-back {
+  height: 100vh;
+  width: 60%;
+  background-color: #ffffff;
+  background-image: url("images/bg-pattern-desktop.svg");
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 320px) and (max-width: 1199px) {
+  .text-back {
+    width: 100%;
+    height: initial;
+    margin-top: 20px;
+  }
+}
+.text-back .text-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  width: 60%;
+  height: 70%;
+  max-height: 700px;
+}
+@media (min-width: 320px) and (max-width: 1199px) {
+  .text-back .text-cont {
+    width: 80%;
+  }
+}
+.text-back .text-cont img {
+  margin-bottom: 5em;
+}
+@media (min-width: 320px) and (max-width: 1199px) {
+  .text-back .text-cont img {
+    display: none;
+  }
+}
+@media (min-width: 320px) and (max-width: 1199px) {
+  .text-back .text-cont .text {
+    text-align: center;
+  }
+}
+
+.img-cont {
+  background-image: url("images/hero-desktop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 40%;
+}
+@media (min-width: 320px) and (max-width: 1199px) {
+  .img-cont {
+    width: 100vw;
+    max-width: 100%;
+    height: 40vh;
+  }
+}
+
+#error {
+  display: none;
+  color: red;
+  font-family: "Josefin sans";
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+h1 {
+  font-family: "Josefin sans";
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-size: 5vw;
+  margin: 0;
+  line-height: 1.2em;
+  max-width: 470px;
+}
+@media (min-width: 320px) and (max-width: 1199px) {
+  h1 {
+    font-size: 9vw;
+  }
+}
+
+h2 {
+  font-family: "Josefin sans";
+  font-weight: 300;
+  color: #ce9797;
+  font-size: 5vw;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  margin: 0;
+}
+@media (min-width: 320px) and (max-width: 1199px) {
+  h2 {
+    font-size: 9vw;
+  }
+}
+
+p {
+  font-family: "Josefin sans";
+  font-weight: 400;
+  color: #ce9797;
+  font-size: 16px;
+  line-height: 1.7em;
+}
+@media (min-width: 320px) and (max-width: 1199px) {
+  p {
+    font-size: 14px;
+  }
+}
+
+button:focus {
+  outline: none;
+}
+
+button {
+  width: 70px;
+  height: 46px;
+  border-radius: 30px;
+  border: none;
+  background-image: url(images/icon-arrow.svg), linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 5px 20px 0px rgba(249, 98, 98, 0.4);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+form {
+  position: relative;
+  display: inline-flex;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+#email {
+  width: 35vw;
+  height: 40px;
+  border: double 2px transparent;
+  border-radius: 30px;
+  border-color: rgba(65, 58, 58, 0.3);
+  padding-left: 20px;
+  color: #000;
+  font-family: "Josefin sans";
+  padding-right: 30px;
+  background-repeat: no-repeat;
+  background-position: 80% 50%;
+}
+@media (min-width: 320px) and (max-width: 1199px) {
+  #email {
+    width: 70vw;
+  }
+}
+
+input::placeholder {
+  color: #ce9797;
+  font-family: "Josefin sans";
+}
+
+input:focus {
+  border-color: #ce9797;
+  outline-width: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

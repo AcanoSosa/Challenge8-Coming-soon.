@@ -1,0 +1,180 @@
+//Colors//
+$Desaturated-Red: hsl(204, 43%, 93%);
+$Soft-Red: hsl(0, 36%, 70%);
+$Dark-Grayish-Red: hsl(0, 6%, 24%, 0.3);
+
+//Flex//
+@mixin flex ( $flex-direction, $flex-justify, $flex-align) {
+	display: flex;
+	flex-direction: $flex-direction;
+	justify-content: $flex-justify;
+    align-items: $flex-align;
+}
+//Responsive//
+@mixin screen ($size){
+    @if $size == mobile {
+        @media (min-width:320px) and (max-width:1199px){@content;}
+    }
+}
+//Style//
+body{
+    @include flex(row, center, center);
+    margin: 0;
+    @include screen(mobile){
+        @include flex(column-reverse, center, center);
+    }
+}
+.logo-back{
+    display:none;
+    @include screen(mobile){
+    height:80px;
+    width:90vw;
+    @include flex(initial, flex-start, center);
+    }
+    .logo{
+        @include screen(mobile){
+            display:initial;
+            width: 30vw;
+        }
+    }
+}
+.text-back{
+    height: 100vh;
+    width:60%;
+    background-color: #ffffff;
+    background-image: url("images/bg-pattern-desktop.svg");
+    background-size: cover;
+    @include flex(row, center, center);
+    @include screen(mobile){
+        width:100%;
+        height: initial;
+        margin-top:20px;
+    }
+    .text-cont{
+        @include flex(column, start, start);
+        flex-wrap: wrap;
+        width:60%;
+        height: 70%;
+        max-height:700px;
+        @include screen(mobile){
+            width: 80%;
+        }
+        img{
+            margin-bottom: 5em;
+            @include screen(mobile){
+                display:none;
+            }
+        }
+        .text{
+            @include screen(mobile){
+                text-align: center;
+            }
+        }
+    }
+}
+.img-cont{
+    background-image: url("images/hero-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 40%;
+    @include screen(mobile){
+        width: 100vw;
+        max-width:100%;
+        height:40vh;
+    }
+}
+#error{
+    display:none;
+    color:red;
+    font-family: 'Josefin sans';
+    font-size: 12px;
+    margin-left:20px;
+}
+
+h1{
+    font-family: 'Josefin sans';
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    font-size: 5vw;
+    margin:0;
+    line-height:1.2em;
+    max-width: 470px;
+    @include screen(mobile){
+        font-size: 9vw;
+    }
+}
+h2{
+    font-family: 'Josefin sans';
+    font-weight: 300;
+    color: $Soft-Red;
+    font-size: 5vw;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    margin:0;
+    @include screen(mobile){
+        font-size: 9vw;
+    }
+}
+p{
+    font-family: 'Josefin sans';
+    font-weight: 400;
+    color: $Soft-Red;
+    font-size: 16px;
+    line-height:1.7em;
+    @include screen(mobile){
+        font-size: 14px;
+    }
+}
+button:focus{
+    outline: none;
+}
+button{
+    width: 70px;
+    height:46px;
+    border-radius: 30px;
+    border:none;
+    background-image: url(images/icon-arrow.svg), linear-gradient( 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow:0px 5px 20px 0px hsl(0, 93%, 68%, 0.4);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+form{
+    position: relative;
+    display: inline-flex;
+    margin-top:20px;
+    margin-bottom: 5px;
+    @include screen(mobile){
+
+    }
+}
+#email{
+    width: 35vw;
+    height: 40px;
+    border: double 2px transparent;
+    border-radius: 30px;
+    border-color: $Dark-Grayish-Red;
+    padding-left:20px;
+    color: #000;
+    font-family: 'Josefin sans';
+    padding-right:30px;
+    //For the error icon
+    
+    background-repeat: no-repeat;
+    background-position: 80% 50%;
+    @include screen(mobile){
+        width:70vw;
+    }
+}
+input::placeholder{
+    color: $Soft-Red;
+    font-family: 'Josefin sans';
+}
+input:focus {
+    border-color: $Soft-Red;
+    outline-width: 0;
+  }
