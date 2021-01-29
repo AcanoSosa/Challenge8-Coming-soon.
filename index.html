@@ -24,8 +24,8 @@
           up-to-date with announcements and our launch deals.
         </p>
         <form id="form" action="#">
-          <input id="email" name="email" type="email" placeholder="Email Adress">
-          <button type="submit" onclick=""></button>
+          <input id="email" name="email" type="email" placeholder="Email Adress" value="Email">
+          <button type="submit" onclick="" value="submit"></button>
         </form>
         <p id="error">Please provide a valid email</p>
       </div>
@@ -35,6 +35,7 @@
   <div class="logo-back">
     <img class="logo" src="images/logo.svg" alt="">
   </div>
+
   <script>
     document.getElementById("email").addEventListener("change", validateEmail, true);
 
