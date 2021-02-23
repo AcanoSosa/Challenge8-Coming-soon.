@@ -14,15 +14,15 @@
 </head>
 
 <body>
-  <div class="text-back">
-    <div class="text-cont">
-      <img src="images/logo.svg" alt="">
-      <div class="text">
-        <h2>We're</h2>
-        <h1>coming soon</h1>
-        <p> Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay
-          up-to-date with announcements and our launch deals.
-        </p>
+  <div id="text">
+    <img src="images/logo.svg" alt="">
+    <div class="text--content">
+      <h2>We're</h2>
+      <h1>coming soon</h1>
+      <p class="Text--content-description"> Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay
+        up-to-date with announcements and our launch deals.
+      </p>
+      <div class="text--form">
         <form id="form" action="#">
           <input id="email" name="email" type="email" placeholder="Email Adress" aria-label="Email">
           <button type="submit" onclick="" aria-label="submit"></button>
@@ -31,35 +31,12 @@
       </div>
     </div>
   </div>
-  <div class="img-cont"></div>
-  <div class="logo-back">
-    <img class="logo" src="images/logo.svg" alt="">
+  <div class="image"></div>
+  <div class="mobile">
+    <img class="mobile-logo" src="images/logo.svg" alt="">
   </div>
-
-  <script>
-    document.getElementById("email").addEventListener("change", validateEmail, true);
-
-    function validateEmail() {
-      var mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-      let field = document.getElementById('email');
-      let style = field.style;
-      let value = field.value;
-      if (value === !null) { }
-
-      if (value.match(mailFormat) || value.length == 0) {
-        style.borderColor = "hsl(0, 36%, 70%)";
-        error.style.display = "none";
-        style.backgroundImage = "url()";
-      }
-      else {
-        style.borderColor = "red";
-        style.backgroundImage = "url(images/icon-error.svg)";
-        error.style.display = "initial";
-      }
-    }
-  </script>
-  <!-- thanks to w3resource for the mail format https://www.w3resource.com/javascript/form/email-validation.php -->
   <!-- Thanks to Frontend Mentor -->
 </body>
+<script src="index.js"></script>
 
 </html>

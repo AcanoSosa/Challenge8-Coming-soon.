@@ -1,5 +1,13 @@
 # Hi! I´m Alejandra and this is my take on the Front Mentor project "Base Apparel coming soon page"
 
+[Check out how if works!](https://challenge8-coming-soon.vercel.app/)
+[Visit my Frontend Mentor profile](https://www.frontendmentor.io/profile/AcanoSosa)
+
+
+
+
+# Frontend Mentor - Base Apparel coming soon page
+
 ![Design preview for the Base Apparel coming soon page coding challenge](./design/desktop-preview.jpg)
 
 Thanks for checking out this front-end coding challenge.

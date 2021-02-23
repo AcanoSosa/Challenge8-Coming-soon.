@@ -16,182 +16,218 @@ $Dark-Grayish-Red: hsl(0, 6%, 24%, 0.3);
         @media (min-width:280px) and (max-width:1199px){@content;}
     }
 }
-//Style//
+
+
+//General placing and Style//
+
+
 html
 {
+    overflow-x: hidden; 
     height:100%;
     width: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
+    font-size: 62.5%;
 }
+
 body{
+    @include flex(row, center, center);
+    overflow-x: hidden; 
     height:100%;
     width: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
-    @include flex(row, center, center);
+
     @include screen(mobile){
         @include flex(column-reverse, center, flex-start);
     }
 }
-.logo-back{
-    display:none;
-    @include screen(mobile){
-    height:10%;
+
+#text{
+    @include flex(column, center, flex-start);
+    height: 100vh;
     width:100%;
-    padding-left: 5vw;
-    @include flex(initial, flex-start, center);
+    padding-left:9em;
+    background-color: #ffffff;
+    background-image: url("images/bg-pattern-desktop.svg");
+    background-size: cover;
+
+    @include screen(mobile){
+        @include flex(row, center, flex-start);
+        height:50%;
+        min-height: 324px; 
+        margin-top:10vw;
+        padding-left:0em;
     }
-    .logo{
+    img{
+        height: 33px;
+        width:158;
+        margin-bottom: 5em;
+
+        @include screen(mobile){
+            display:none;
+        }
+    }
+    .text--content{
+        @include flex(row, flex-start, flex-start);
+        width: 60em;
+        flex-wrap: wrap;
+
+        @include screen(mobile){
+            @include flex(column, flex-start, center);
+            width: 84%;
+            height: initial;
+        }
+    }
+}
+
+.image{
+    height: 100vh;
+    width: 40%;
+    background-image: url("images/hero-desktop.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include screen(mobile){
+        height:40%;
+        width: 100vw;
+        max-width: 100%;
+        background-position: top;
+    }
+}
+
+.mobile{
+    display:none;
+
+    @include screen(mobile){
+        @include flex(initial, flex-start, center);
+        height:10%;
+        width:100%;
+        padding-left: 5vw;
+    }
+    .mobile-logo{
         @include screen(mobile){
             display:initial;
             width: 30vw;
             max-width:130px;
+            margin: 20em 0 20em 0 ;
         }
     }
-}
-.text-back{
-    height: 100vh;
-    width:60%;
-    background-color: #ffffff;
-    background-image: url("images/bg-pattern-desktop.svg");
-    background-size: cover;
-    @include flex(row, center, center);
-    @include screen(mobile){
-        @include flex(row, center, flex-start);
-        width:100%;
-        margin-top:10vw;
-        height:50%; 
-        min-height: 324px;
-    }
-    .text-cont{
-        flex-wrap: wrap;
-        width:60%;
-        @include screen(mobile){
-            width: 80%;
-            height: initial;
-        }
-        img{
-            margin-bottom: 5em;
-            @include screen(mobile){
-                display:none;
-            }
-        }
-        .text{
-            @include flex(column, flex-start, flex-start);
-            flex-wrap: wrap;
-            @include screen(mobile){
-                text-align: center;
-                @include flex(column, center, center);
-            }
-        }
-    }
-}
-.img-cont{
-    background-image: url("images/hero-desktop.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 40%;
-    @include screen(mobile){
-        width: 100vw;
-        max-width: 100%;
-        height:40%;
-    }
-}
-#error{
-    display:none;
-    color:red;
-    font-family: 'Josefin sans';
-    font-size: 12px;
-    margin-left:20px;
 }
 
+
+  //Font Syles//
+
+
 h1{
+    margin:0;
     font-family: 'Josefin sans';
     font-weight: 600;
+    font-size: 8em;
     text-transform: uppercase;
     letter-spacing: .5em;
-    font-size: 4.5vw;
-    margin:0;
     line-height:1.2em;
+
     @include screen(mobile){
         font-size: 9vw;
+        text-align: center;
     }
 }
 h2{
-    
+    margin:0;
     font-family: 'Josefin sans';
     font-weight: 300;
-    color: $Soft-Red;
-    font-size: 4.5vw;
+    font-size: 5em;
     text-transform: uppercase;
     letter-spacing: .5em;
-    margin:0;
+    color: $Soft-Red;
+
     @include screen(mobile){
         font-size: 9vw;
+
         
     }
 }
-p{
+.Text--content-description{
     font-family: 'Josefin sans';
     font-weight: 400;
-    color: $Soft-Red;
-    font-size: 16px;
+    font-size: 1.7em;
     line-height:1.7em;
+    color: $Soft-Red;
+
     @include screen(mobile){
-        font-size: 14px;
+        font-size: 1.2em;
+        text-align: center;
     }
 }
-button:focus{
-    outline: none;
-}
-button{
-    width: 70px;
-    height:46px;
-    border-radius: 30px;
-    border:none;
-    background-image: url(images/icon-arrow.svg), linear-gradient( 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
-    background-repeat: no-repeat;
-    background-position: center;
-    box-shadow:0px 5px 20px 0px hsl(0, 93%, 68%, 0.4);
-    position: absolute;
-    top: 0;
-    right: 0;
-}
+
+//Styles for the Form//
+
+
 form{
-    position: relative;
     display: inline-flex;
+    position: relative;
     margin-top:20px;
     margin-bottom: 5px;
     @include screen(mobile){
-
+        display: block;
     }
 }
-#email{
-    width: 30vw;
+input{
     height: 40px;
+    width: 30vw;
+    min-width: 280px;
+    padding-left:20px;
+    padding-right:30px;
+    font-family: 'Josefin sans';
+    font-size: 1.5em;
+    color: #000;
     border: double 2px transparent;
     border-radius: 30px;
     border-color: $Dark-Grayish-Red;
-    padding-left:20px;
-    color: #000;
-    font-family: 'Josefin sans';
-    padding-right:30px;
-    //For the error icon
+
+    //For the error icon//
     background-repeat: no-repeat;
     background-position: 80% 50%;
+
     @include screen(mobile){
-        width:60vw;
+        width:15em;
+        min-width: initial;
+        background-position: 70% 50%;
     }
 }
 input::placeholder{
-    color: $Soft-Red;
     font-family: 'Josefin sans';
+    color: $Soft-Red;
 }
 input:focus {
     border-color: $Soft-Red;
     outline-width: 0;
   }
+button:focus{
+    outline: none;
+}
+button{
+    position: absolute;
+    width: 70px;
+    height:46px;
+    top: 0;
+    right: 0;
+    border:none;
+    border-radius: 30px;
+    box-shadow:0px 5px 20px 0px hsl(0, 93%, 68%, 0.4);
+
+     //for the chevron icon
+    background-image: url(images/icon-arrow.svg), linear-gradient( 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#error{
+    display:none;
+    margin-left:20px;
+    font-family: 'Josefin sans';
+    font-size: 12px;
+    color:red;
+}
